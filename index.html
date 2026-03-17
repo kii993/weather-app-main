@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <title>Frontend Mentor | Weather app</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <img src="/assets/images/logo.svg" alt="logo">
+
+      <!-- <ドロップダウン＞ -->
+      <div class="dropdown">
+        <button type="button" class="dropdown-btn" aria-expanded="false">Units</button>
+
+        <!-- 項目① -->
+        <div class="dropdown-menu">
+          <div class="group">
+            <p>Switch to Imperial</p>
+            <p class="menu-title">Temperature</p>
+            <label class="unit-option">
+              <input type="radio" name="units" value="celsius" checked>
+              <span>Celsius (°C)</span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="units" value="fahrenheit">
+              <span>Fahrenheit (°F)</span>
+            </label>
+          </div>
+
+          <!-- 項目② -->
+          <div class="group">
+            <p class="menu-title">Wind speed</p>
+            <label class="unit-option">
+              <input type="radio" name="wind" value="kmh" checked>
+              <span>km/h</span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="wind" value="mph">
+              <span>mph</span>
+            </label>
+          </div>
+
+          <!-- 項目③ -->
+          <div class="group">
+            <p class="menu-title">Precipitation</p>
+            <label class="unit-option">
+              <input type="radio" name="precipitation" value="mm" checked>
+              <span>Millimeters (mm)</span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="precipitation" value="in">
+              <span>Inches (in)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <h1>How's the sky looking today?</h1>
+    <div class="search-bar">
+      <input type="text" id="city-input" placeholder="Search for a place....">
+      <button type="button" id="search-btn">Search</button>
+    </div>
+    <!-- Switch to Imperial/Metric -->
+
+    <div class="container">
+      <div class="temperature">
+        <img src="/assets/images/bg-today-large.svg" class="background-img" alt="background-image">
+        <div class="basic-info">
+          <h2 id="city-name" class="city-name">Berlin,Germany</h2>
+          <h3 class="date">Tuesday,Aug 5,2025</h3>
+        </div>
+        <div class="temperature-info">
+          <ul>
+            <li><img src="/assets/images/icon-sunny.webp" alt="Weather-logo"></li>
+            <li>
+              <h2 id="temp-value" class="current-temperature">--</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="weather-details">
+        <ul class="details-wrapper">
+          <li>
+            <ul class="details">
+              <li>Feels Like</li>
+              <li><span id="feels-like">--</span>°</li>
+            </ul>
+          </li>
+
+          <li>
+            <ul class="details">
+              <li>Humidity</li>
+              <li><span id="humidity">--</span>%</li>
+            </ul>
+          </li>
+
+          <li>
+            <ul class="details">
+              <li id="wind">Wind</li>
+              <li>
+                <span id="wind-value" data-kmh=""></span>
+                <span id="wind-unit"></span>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <ul class="details">
+              <li>Precipitation</li>
+              <li>
+                <span id="precip-value">0</span>
+                <span id="precip-unit">mm</span>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+
+      <h3>Daily forecast</h3>
+      <div class="weekly-forecast">
+        <ul>
+          <li class="week">
+            <h4>Tue</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+
+          <li class="week">
+            <h4>Wed</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+
+          <li class="week">
+            <h4>Thu</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+
+          <li class="week">
+            <h4>Fri</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+
+          <li class="week">
+            <h4>Sat</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+
+          <li class="week">
+            <h4>Sun</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+
+          <li class="week">
+            <h4>Mon</h4>
+            <img src="/assets/images/icon-rain.webp" alt="weather-icon">
+            <h5>20°<span>14°</span></h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hourly-forecast-wrapper">
+        <div class="hourly-forecast">
+          <div class="header-row">
+            <h6>Hourly forecast</h6>
+            <select id="day" name="day">
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+            </select>
+          </div>
+
+          <ul class="weather-hours" id="weatherHours">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>
